@@ -85,6 +85,29 @@ function runMockupDataChecks() {
 
 runMockupDataChecks();
 
+function CafeFaviconMark({ size = "nav" }) {
+  const outerSize = size === "nav" ? "h-14 w-14" : "h-16 w-16";
+  const innerSize = size === "nav" ? "h-10 w-10" : "h-12 w-12";
+
+  return (
+    <div
+      className={`${outerSize} relative flex items-center justify-center rounded-[1.35rem] bg-[#ffb9a8] shadow-[0_7px_0_#f19280] ring-1 ring-[#6d3c2c]/10`}
+      aria-label="A Corner Cafe mark"
+    >
+      <div className={`${innerSize} flex items-center justify-center overflow-hidden rounded-[1rem] bg-[#fff9ef] p-0 shadow-inner ring-1 ring-[#6d3c2c]/10`}>
+        <img
+          src="/favicon.svg"
+          alt="A Corner Cafe logo mark"
+          className="h-full w-full object-cover object-center"
+        />
+      </div>
+      <span className="absolute -right-1.5 -top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-[#ffe28a] text-xs shadow-sm ring-2 ring-[#fff9ef]">
+        ✦
+      </span>
+    </div>
+  );
+}
+
 function ArrowIcon() {
   return <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>;
 }
@@ -114,10 +137,7 @@ export default function ACornerCafeHomepageMockup() {
       <nav className="sticky top-0 z-50 border-b border-[#6d3c2c]/10 bg-[#fff9ef]/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
           <a href="#top" className="flex items-center gap-3">
-            <div className="relative flex h-12 w-12 items-center justify-center rounded-[1.25rem] bg-[#ffb9a8] text-2xl shadow-[0_8px_0_#f19280]">
-              ☕
-              <span className="absolute -right-1 -top-1 rounded-full bg-[#ffe28a] px-1 text-xs">✦</span>
-            </div>
+            <CafeFaviconMark />
             <div>
               <p className="text-lg font-black tracking-tight">A Corner Cafe</p>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c96d57]">brunch • coffee • cozy corners</p>
@@ -150,7 +170,7 @@ export default function ACornerCafeHomepageMockup() {
         <div className="absolute left-[-7rem] top-[-7rem] h-72 w-72 rounded-full bg-[#ffb9a8]/35 blur-3xl" />
         <div className="absolute bottom-[-8rem] right-[-7rem] h-96 w-96 rounded-full bg-[#ffe28a]/45 blur-3xl" />
 
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 md:grid-cols-[1.02fr_0.98fr] md:px-8 md:py-22">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 md:grid-cols-[1.02fr_0.98fr] md:px-8 md:py-20">
           <div className="relative z-10">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#c96d57]/20 bg-white/75 px-4 py-2 text-sm font-black text-[#a14f3d] shadow-sm">
               <span aria-hidden="true">♡</span>
@@ -244,7 +264,7 @@ export default function ACornerCafeHomepageMockup() {
           {locations.map((location) => (
             <article key={location.name} className={`${location.bg} group rounded-[2rem] border border-white p-6 shadow-[0_10px_0_#f2d2bd] ring-1 ring-[#6d3c2c]/10 transition hover:-translate-y-1 hover:shadow-[0_14px_0_#f2d2bd]`}>
               <div className="mb-6 flex items-center justify-between">
-                <div className="flex h-15 w-15 items-center justify-center rounded-[1.4rem] bg-white text-3xl shadow-sm">
+                <div className="flex h-14 w-14 items-center justify-center rounded-[1.4rem] bg-white text-3xl shadow-sm">
                   <span aria-hidden="true">{location.icon}</span>
                 </div>
                 <span className="rounded-full bg-white px-3 py-1 text-xs font-black text-[#a14f3d] shadow-sm ring-1 ring-[#6d3c2c]/10">{location.label}</span>
@@ -399,18 +419,44 @@ export default function ACornerCafeHomepageMockup() {
         </div>
       </section>
 
-      <footer className="border-t border-[#6d3c2c]/10 bg-white/45 px-5 py-10 md:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-center">
-          <div>
-            <p className="text-xl font-black">A Corner Cafe</p>
-            <p className="mt-1 text-sm font-semibold text-[#715648]">Asian-fusion brunch, specialty coffee, and cozy café experiences across the GTA.</p>
+      <footer className="border-t border-[#6d3c2c]/20 bg-[#fff3df] px-5 py-12 text-[#715648] md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-8 flex flex-col justify-between gap-6 md:flex-row md:items-center">
+            <div className="flex items-center gap-4">
+              <CafeFaviconMark size="large" />
+              <div>
+                <p className="text-xl font-black text-[#3c2a1f]">A Corner Cafe</p>
+                <p className="mt-1 text-sm font-semibold">Asian-fusion brunch, specialty coffee, and cozy café experiences across the GTA.</p>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-3 text-sm font-black text-[#c96d57]">
+              <span>Markham</span>
+              <span>·</span>
+              <span>North York</span>
+              <span>·</span>
+              <span>Richmond Hill</span>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-3 text-sm font-black text-[#c96d57]">
-            <span>Markham</span>
-            <span>·</span>
-            <span>North York</span>
-            <span>·</span>
-            <span>Richmond Hill</span>
+
+          <div className="border-t border-[#715648]/35 pt-8 text-base leading-8 md:text-lg md:leading-9">
+            <p>© 2026 A Corner Cafe. Website mockup.</p>
+
+            <p className="mt-4">
+              This site was designed and developed by{" "}
+              <a
+                href="https://motchi.ca"
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold underline underline-offset-4 hover:text-[#3c2a1f]"
+              >
+                Motchi Websites
+              </a>
+              .
+            </p>
+
+            <p className="mt-4 max-w-5xl">
+              All design and code rights reserved by Motchi. Photos are placeholders and would be replaced with actual café photos in a real build. The layout is optimized for desktop but is fully responsive down to mobile widths. Ordering, menu, and location links are non-functional in this mockup and would be integrated with real business systems in a complete build.
+            </p>
           </div>
         </div>
       </footer>
