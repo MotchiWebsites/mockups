@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+    --background: #fffaf3;
+    --foreground: #241a14;
+
+    --daon-milk: #fffaf3;
+    --daon-cream: #f7eadc;
+    --daon-foam: #fff4e8;
+    --daon-coffee: #5b3a29;
+    --daon-espresso: #241a14;
+    --daon-matcha: #7f9f6a;
+    --daon-matcha-dark: #4f6f43;
+    --daon-strawberry: #f3a6b4;
+    --daon-strawberry-soft: #ffe1e7;
+    --daon-butter: #f6c85f;
+    --daon-blueberry: #8d95c7;
+    --daon-muted: #8d7b6c;
+    --daon-border: rgba(91, 58, 41, 0.14);
+    --daon-shadow: 0 24px 70px rgba(91, 58, 41, 0.13);
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-daon-milk: var(--daon-milk);
+    --color-daon-cream: var(--daon-cream);
+    --color-daon-foam: var(--daon-foam);
+    --color-daon-coffee: var(--daon-coffee);
+    --color-daon-espresso: var(--daon-espresso);
+    --color-daon-matcha: var(--daon-matcha);
+    --color-daon-matcha-dark: var(--daon-matcha-dark);
+    --color-daon-strawberry: var(--daon-strawberry);
+    --color-daon-strawberry-soft: var(--daon-strawberry-soft);
+    --color-daon-butter: var(--daon-butter);
+    --color-daon-blueberry: var(--daon-blueberry);
+    --color-daon-muted: var(--daon-muted);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--daon-milk);
+    color: var(--daon-espresso);
+}
+
+::selection {
+    background: var(--daon-strawberry);
+    color: var(--daon-espresso);
+}
+
+.daon-container {
+    width: min(1180px, calc(100% - 32px));
+    margin-inline: auto;
+}
+
+.daon-pill {
+    border: 1px solid var(--daon-border);
+    background: rgba(255, 250, 243, 0.72);
+    backdrop-filter: blur(18px);
+}
+
+.daon-card {
+    border: 1px solid var(--daon-border);
+    box-shadow: var(--daon-shadow);
+}
+
+.daon-soft-bg {
+    background:
+        radial-gradient(
+            circle at 18% 12%,
+            rgba(243, 166, 180, 0.25),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 82% 18%,
+            rgba(127, 159, 106, 0.22),
+            transparent 26%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(246, 200, 95, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(135deg, #fffaf3 0%, #f7eadc 58%, #fff4e8 100%);
+}
+
+.daon-green-bg {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 250, 243, 0.22),
+            transparent 30%
+        ),
+        linear-gradient(135deg, #4f6f43 0%, #7f9f6a 100%);
+}
