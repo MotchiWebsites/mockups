@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+    --background: #f7efe2;
+    --foreground: #16120e;
+
+    --tre-cream: #f7efe2;
+    --tre-porcelain: #fffaf1;
+    --tre-ink: #16120e;
+    --tre-ink-soft: #241d17;
+    --tre-gold: #c79a52;
+    --tre-gold-soft: #ead2a4;
+    --tre-bamboo: #9b6a3c;
+    --tre-olive: #596044;
+    --tre-red: #9f3328;
+    --tre-muted: #8b7d6c;
+
+    --tre-concept-night: #080817;
+    --tre-concept-night-soft: #10101f;
+    --tre-concept-gold: #e6a300;
+    --tre-concept-gold-soft: #f0b52a;
+    --tre-concept-line: rgba(230, 163, 0, 0.75);
+
+    --tre-border: rgba(199, 154, 82, 0.28);
+    --tre-shadow: 0 30px 90px rgba(22, 18, 14, 0.18);
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-tre-cream: var(--tre-cream);
+    --color-tre-porcelain: var(--tre-porcelain);
+    --color-tre-ink: var(--tre-ink);
+    --color-tre-ink-soft: var(--tre-ink-soft);
+    --color-tre-gold: var(--tre-gold);
+    --color-tre-gold-soft: var(--tre-gold-soft);
+    --color-tre-bamboo: var(--tre-bamboo);
+    --color-tre-olive: var(--tre-olive);
+    --color-tre-red: var(--tre-red);
+    --color-tre-muted: var(--tre-muted);
+
+    --color-tre-concept-night: var(--tre-concept-night);
+    --color-tre-concept-night-soft: var(--tre-concept-night-soft);
+    --color-tre-concept-gold: var(--tre-concept-gold);
+    --color-tre-concept-gold-soft: var(--tre-concept-gold-soft);
+    
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+}
+
+::selection {
+    background: var(--tre-gold);
+    color: var(--tre-ink);
+}
+
+.tre-container {
+    width: min(1180px, calc(100% - 32px));
+    margin-inline: auto;
+}
+
+.tre-eyebrow {
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.tre-card {
+    border: 1px solid var(--tre-border);
+    box-shadow: var(--tre-shadow);
+}
+
+.tre-soft-gradient {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(199, 154, 82, 0.24),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 0%,
+            rgba(89, 96, 68, 0.18),
+            transparent 34%
+        ),
+        linear-gradient(135deg, #fffaf1 0%, #f7efe2 48%, #ead2a4 130%);
+}
+
+.tre-dark-gradient {
+    background:
+        radial-gradient(
+            circle at 22% 12%,
+            rgba(199, 154, 82, 0.18),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 82% 70%,
+            rgba(159, 51, 40, 0.12),
+            transparent 30%
+        ),
+        linear-gradient(135deg, #16120e 0%, #241d17 58%, #302215 100%);
+}
+
+.tre-image-mask {
+    border-radius: 999px 999px 28px 28px;
+}
